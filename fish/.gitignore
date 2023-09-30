@@ -1,6 +1,6 @@
-completions/*
-functions/*
-themes/*
-conf.d/*
+completions
+functions
+themes
+conf.d
 
 fish_variables
