@@ -1,0 +1,14 @@
+plugin
+spell
+ftplugin
+syntax
+coc-settings.json
+.luarc.json
+lazy-lock.json
+after
+
+# all the NvChad 
+lua/core/*
+lua/plugins/*
+init.lua
+.stylua.toml
