@@ -4,4 +4,4 @@
 
 2. install NvChad
 
-3. copy these files into custom folder
+3. copy custom foder into `~/.config/nvim/lua/custom/` folder for NvChad
