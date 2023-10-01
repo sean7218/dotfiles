@@ -15,8 +15,8 @@ M.general = {
     ["<leader>sq"] = {"<cmd> lua require('fzf-lua').quickfix() <CR>", "[S]earch [Q]uickfix List"},
  },
   v = {
-    ["J"] = { ": m '>+1<CR>gv=gv", "Move lines down"},
-    ["K"] = { ": m '<-1<CR>gv=gv", "Move lines up"},
+    ["K"] = { ": m '<-2<CR>gv=gv", "Move lines up (v)"},
+    ["J"] = { ": m '>+1<CR>gv=gv", "Move lines down (v)"},
   }
 }
 
