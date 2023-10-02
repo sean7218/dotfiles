@@ -42,7 +42,8 @@ M.mason = {
     -- data stuff
     "pyright",
     "ruff",
-    "mypy"
+    "mypy",
+    "black"
   },
 }
 
