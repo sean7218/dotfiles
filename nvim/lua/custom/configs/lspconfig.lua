@@ -1,6 +1,5 @@
 local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
-
 local lspconfig = require "lspconfig"
 
 -- if you just want default config for the servers then put them in a table
@@ -22,7 +21,7 @@ lspconfig.clangd.setup {
 }
 
 lspconfig.pyright.setup {
-  cmd = { "pyright-langserver", "--stdio" },
+  on_attach = on_attach,
+  capabilities = capabilities,
   filetypes = { "python" },
-  signle_file_support = true
 }

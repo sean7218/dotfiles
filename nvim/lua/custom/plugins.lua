@@ -42,6 +42,7 @@ local plugins = {
       -- format & linting
       {
         "jose-elias-alvarez/null-ls.nvim",
+        ft = { "python" },
         config = function()
           require "custom.configs.null-ls"
         end,
