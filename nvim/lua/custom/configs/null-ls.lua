@@ -20,20 +20,20 @@ local opts = {
     b.formatting.black,
   },
   on_attach = function(client, bufnr)
-    if client.supports_method("textDocument/formatting") then
-      vim.api.nvim_clear_autocmds({
+    if client.supports_method "textDocument/formatting" then
+      vim.api.nvim_clear_autocmds {
         group = augroup,
-        buffer = buffnr
-      })
+        buffer = bufnr,
+      }
       vim.api.nvim_create_autocmd("BufWritePre", {
         group = augroup,
-        buffer = buffnr,
+        buffer = bufnr,
         callback = function()
-          vim.lsp.buf.format({ bufnr = bufnr })
+          vim.lsp.buf.format { bufnr = bufnr }
         end,
       })
     end
   end,
 }
 
-return opts;
+return opts
