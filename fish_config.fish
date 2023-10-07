@@ -12,4 +12,4 @@ if test -f /Users/sean7218/miniconda3/bin/conda
 end
 # <<< conda initialize <<<
 
-set username "sean7218"
+set username "sean7218_not____exist"

@@ -1,22 +1,21 @@
-local overrides = require("custom.configs.overrides")
+local overrides = require "custom.configs.overrides"
 
 ---@type NvPluginSpec[]
 local plugins = {
-  -- lazy.nvim:
   {
     "smoka7/multicursors.nvim",
     event = "VeryLazy",
     dependencies = {
-      'smoka7/hydra.nvim',
+      "smoka7/hydra.nvim",
     },
     opts = {},
-    cmd = { 'MCstart', 'MCvisual', 'MCclear', 'MCpattern', 'MCvisualPattern', 'MCunderCursor' },
+    cmd = { "MCstart", "MCvisual", "MCclear", "MCpattern", "MCvisualPattern", "MCunderCursor" },
     keys = {
       {
-        mode = { 'v', 'n' },
-        '<Leader>m',
-        '<cmd>MCstart<cr>',
-        desc = 'Create a selection for selected text or word under the cursor',
+        mode = { "v", "n" },
+        "<Leader>m",
+        "<cmd>MCstart<cr>",
+        desc = "Create a selection for selected text or word under the cursor",
       },
     },
   },
@@ -26,14 +25,14 @@ local plugins = {
     "ibhagwan/fzf-lua",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
-      require('fzf-lua').setup({
+      require("fzf-lua").setup {
         winopts = {
           preview = {
-            hidden = "hidden"
-          }
-        }
-      })
-    end
+            hidden = "hidden",
+          },
+        },
+      }
+    end,
   },
 
   {
@@ -57,7 +56,7 @@ local plugins = {
   -- override plugin configs
   {
     "williamboman/mason.nvim",
-    opts = overrides.mason
+    opts = overrides.mason,
   },
 
   {
