@@ -64,19 +64,19 @@ void leader_start_user(void) {
 
 void leader_end_user(void) {
     if (leader_sequence_one_key(KC_1)) {
-        // SEND_STRING(SCMD("1"));
+        tap_code16(LSC_1);
     }
     else if (leader_sequence_one_key(KC_2)) {
-        // SEND_STRING(SCMD("2"));
+        tap_code16(LSC_2);
     }
     else if (leader_sequence_one_key(KC_3)) {
-        // SEND_STRING(SS_LCTL(SS_LSFT("3")));
+        // SEND_STRING(SS_TAP(LSC_1));
     }
     else if (leader_sequence_one_key(KC_4)) {
-        // SEND_STRING(SS_LCTL(SS_LSFT("4")));
+        // SEND_STRING(LSC_4);
     }
     else if (leader_sequence_one_key(KC_5)) {
-        // SEND_STRING("leader 5");
+        SEND_STRING("leader 5");
     }
     else {
         SEND_STRING("leader + nothing");
