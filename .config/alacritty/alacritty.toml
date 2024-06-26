@@ -1,0 +1,65 @@
+import = [
+  "~/.config/alacritty/mocha.toml"
+]
+
+live_config_reload = true
+
+[env]
+TERM = "xterm-256color"
+
+[shell]
+program = "/usr/local/bin/fish"
+
+[font]
+size = 16.0
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Italic"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font"
+style = "BoldItalic"
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.offset]
+x = 0
+y = 0
+
+[scrolling]
+history = 0
+multiplier = 3
+
+[window]
+decorations = "full"
+dynamic_padding = false
+opacity = 1.0
+startup_mode = "Windowed"
+
+[window.dimensions]
+columns = 160
+lines = 80
+
+[window.padding]
+x = 4
+y = 4
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[keyboard]
+bindings = [
+  { key = "X", mods = "Control|Shift", action = "Quit" } 
+]
+
