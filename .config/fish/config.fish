@@ -4,8 +4,8 @@ end
 
 
 # better ls with brew install eza
-alias ls="eza"
-alias ll="eza -l --grid"
+# alias ls="eza"
+# alias ll="eza -l --grid"
 
 # setup Starship Prompt
 starship init fish | source
