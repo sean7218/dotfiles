@@ -1,22 +1,28 @@
 # the mod key can be cmd or alt
 # Window focusing
-cmd - k : yabai -m window --focus north
-cmd - j : yabai -m window --focus south
-cmd - h : yabai -m window --focus west
-cmd - l : yabai -m window --focus east 
+alt - k : yabai -m window --focus north
+alt - j : yabai -m window --focus south
+alt - h : yabai -m window --focus west
+alt - l : yabai -m window --focus east 
 
 # Window Moving
-shift + cmd - k : yabai -m window --warp north
-shift + cmd - j : yabai -m window --warp south
-shift + cmd - h : yabai -m window --warp west
-shift + cmd - l : yabai -m window --warp east 
+shift + alt - k : yabai -m window --warp north
+shift + alt - j : yabai -m window --warp south
+shift + alt - h : yabai -m window --warp west
+shift + alt - l : yabai -m window --warp east 
 
 # Window Moving to Space
-shift + cmd - 1 : yabai -m window --space 1 --focus
-shift + cmd - 2 : yabai -m window --space 2 --focus
-shift + cmd - 3 : yabai -m window --space 3 --focus
-shift + cmd - 4 : yabai -m window --space 4 --focus
-shift + cmd - 5 : yabai -m window --space 5 --focus
+shift + alt - 1 : yabai -m window --space 1 --focus
+shift + alt - 2 : yabai -m window --space 2 --focus
+shift + alt - 3 : yabai -m window --space 3 --focus
+shift + alt - 4 : yabai -m window --space 4 --focus
+shift + alt - 5 : yabai -m window --space 5 --focus
+
+# shift + alt - 1 : yabai -m window --space 1 --focus
+# shift + alt - 2 : yabai -m window --space 2 --focus
+# shift + alt - 3 : yabai -m window --space 3 --focus
+# shift + alt - 4 : yabai -m window --space 4 --focus
+# shift + alt - 5 : yabai -m window --space 5 --focus
 
 # Window Resizing
 lctrl + cmd - h : yabai -m window --resize left:-50:0; #\
