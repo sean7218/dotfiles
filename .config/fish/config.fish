@@ -11,9 +11,11 @@ end
 starship init fish | source
 
 # setup zoxide
-zoxide init fish | source
+# zoxide init fish | source
 
 # setup fzf
 # 1. brew install fzf fd bat
 # 2. install fisher
 # 3. install fzf.fish at https://github.com/PatrickF1/fzf.fish
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
