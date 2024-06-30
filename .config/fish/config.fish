@@ -11,7 +11,7 @@ end
 starship init fish | source
 
 # setup zoxide
-# zoxide init fish | source
+zoxide init fish | source
 
 # setup fzf
 # 1. brew install fzf fd bat

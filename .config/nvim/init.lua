@@ -576,7 +576,6 @@ require("lazy").setup({
 			--  - settings (table): Override the default settings passed when initializing the server.
 			--        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 			local servers = {
-				clangd = {},
 				gopls = {},
 				pyright = {},
 				rust_analyzer = {},
@@ -618,6 +617,8 @@ require("lazy").setup({
 			local ensure_installed = vim.tbl_keys(servers or {})
 			vim.list_extend(ensure_installed, {
 				"stylua", -- Used to format Lua code
+				"clangd",
+				"marksman",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
@@ -634,7 +635,13 @@ require("lazy").setup({
 				},
 			})
 
-			require("lspconfig").sourcekit.setup({
+			-- require("lspconfig").sourcekit.setup({
+			--  capabilities = capabilities,
+			-- })
+			require("lspconfig").clangd.setup({
+				capabilities = capabilities,
+			})
+			require("lspconfig").marksman.setup({
 				capabilities = capabilities,
 			})
 		end,
