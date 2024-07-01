@@ -1,2 +1,2 @@
 #pragma once
-#define TAPPING_TERM 1000
+#define TAPPING_TERM 400
