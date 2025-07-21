@@ -1,10 +1,14 @@
+--  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = false
 
 vim.opt.expandtab = true
-vim.opt.tabstop = 2
+vim.opt.tabstop = 4
 vim.opt.autoindent = true
-vim.opt.shiftwidth = 2
+vim.opt.shiftwidth = 4
 
 vim.opt.number = true
 vim.opt.relativenumber = true

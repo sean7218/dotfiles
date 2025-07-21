@@ -16,7 +16,7 @@ source "${ZINIT_HOME}/zinit.zsh"
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
-# zinit light Aloxaf/fzf-tab
+zinit light Aloxaf/fzf-tab
 
 # Load completions
 autoload -Uz compinit && compinit
@@ -44,8 +44,8 @@ setopt hist_ignore_dups
 setopt hist_find_no_dups
 
 # Completion styling
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+# zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+# zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 # zstyle ':completion:*' menu no
 # zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 # zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
@@ -53,12 +53,6 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 # alias
 alias ls='ls --color' 
 
-# path
-export PATH=$HOME/.local/bin:$PATH
-export PATH=$HOME/.cargo/bin:$PATH
-
-export GEM_HOME=$HOME/.gem # for cocoapods
-export PATH=$GEM_HOME/bin:$PATH # for cocoapods
 
 # Shell integrations
 eval "$(fzf --zsh)"
@@ -73,4 +67,24 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$HOME/.rvm/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH" # where zoxide executable lives
+# export PATH="$HOME/.cargo/bin:$PATH" # for cargo
+export PATH="$HOME/.gem/bin:$PATH" # for cocoapods
+export PATH="$HOME/.cargo/bin:$PATH"
+export SOURCEKIT_LOGGING=3
+# export SOURCEKIT_TOOLCHAIN_PATH=/Users/sean7218/Library/Developer/Toolchains/swift-6.1-RELEASE.xctoolchain/usr/bin/
+# export SOURCEKIT_TOOLCHAIN_PATH="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain"
+# export SOURCEKIT_TOOLCHAIN_PATH="/Users/sean7218/Library/Developer/Toolchains/swift-6.1-RELEASE.xctoolchain"
+# export SOURCEKIT_TOOLCHAIN_PATH="/Users/sean7218/Library/Developer/Toolchains/swift-6.0.2-RELEASE.xctoolchain"
+export SOURCEKIT_TOOLCHAIN_PATH="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain"
+export PATH="/Users/sean7218/.swiftly/bin:$PATH"
+
+function ripgrep {
+rg --color=always --line-number --no-heading --smart-case "" \
+|  fzf --ansi \
+       --delimiter : \
+       --preview 'bat --style=full --color=always --highlight-line {2} {1}' \
+       --preview-window '~4,+{2}+4/3,<80(up)'
+}
+
