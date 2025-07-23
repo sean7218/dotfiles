@@ -15,8 +15,11 @@ $ brew install stow
     - `kitty` -> `~/.config/kitty`
     - `tmux` -> `~/.config/tmux`
     - `nvim` -> `~/.config/nvim`
-    - `aerospace` -> `~/.config/aerospace`
-    - `starship` -> `~`
+    - `htop` -> `~/.config/htop`
+    - `karabiner` -> `~/.config/karabiner`
+    - `aerospace` -> `~`
+    - `starship` -> `~/.config`
+    - `alacritty` -> `~/.config/alacritty`
 
 Here are some example usages of stow:
 
@@ -24,24 +27,78 @@ Here are some example usages of stow:
 # create the nvim folder first
 mkdir -p ~/.config/nvim
 
-# symlink ~/dotfiles/nvim folder and target ~/.config/nvim folder
-stow -t ~/.config/nvim nvim
+# [T]arget ~/.config/nvim folder & [S]tow package nvim
+stow -t ~/.config/nvim -S nvim
 
-# deleting symlink
-stow -D nvim
+# [T]arget ~/.config/nvim folder & [R]estow package nvim
+stow -t ~/.config/nvim -R nvim
+
+# [T]arget ~/.config/nvim folder & [D]eleting package 
+stow -t ~/.config/nvim -D nvim
 ```
 
-## tmux
+## Zsh
 
-1. install the tmux plugin manager [tmp]()
+All zsh config files are at the user home directory `~`
+    - `~/.zshrc`
+    - `~/.zprofile`
+    - `~/.zlogin`
+    - `~/.zenv`
+
+```bash
+cd ~/dotfiles
+stow -t ~ -S zsh
+```
+
+## Kitty
+
+Kitty config are stored in the `~/.config/kitty`
+
+```bash
+mkdir -p ~/.config/kitty
+stow -t ~/.config/kitty -S kitty
+```
+
+## Tmux
+
+1. install the tmux plugin manager [tmp](https://github.com/tmux-plugins/tpm)
 2. launch tmux session and then `ctr+space+I` note: capital I to install plugins
-3. relaunch tmux
+3. source `tmux source ~/.config/tmux/tmux.conf`
+4. relaunch tmux
 
+
+```bash
+mkdir -p ~/.config/tmux
+stow -t ~/.config/tmux -S tmux
+```
+
+## Neovim
+
+Neovim default configs are at `~/.config/nvim`
+
+```bash
+mkdir -p ~/.config/nvim
+stow -t ~/.config/nvim -S nvim
+```
 
 ## Tiling Window Manager
 
 Github link: [nikitabobko/AeroSpace](https://github.com/nikitabobko/AeroSpace)
 
+The default location for `.aerospace.toml` is located at the user home directory `~`
 
+```bash
+stow -t ~ -S aerospace
+```
+
+## Starship
+
+Starship [link](https://starship.rs/config/):
+
+Default location is at `~/.config/starship.toml`
+
+```bash
+stow -t ~/.config -S starship
+```
 
 
