@@ -1,11 +1,17 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- enable 24-bit color
+vim.opt.termguicolors = true
+
 -- Use spaces instead of tabs
 vim.opt.expandtab = true
 
 -- Number of spaces a tab counts for
 vim.opt.tabstop = 4
+
+-- Insert "tabstop" number of spaces when the "tab" key is pressed
+vim.opt.smarttab = true
 
 -- Number of spaces for each indent level (<< and >>)
 vim.opt.shiftwidth = 4
@@ -83,4 +89,12 @@ vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
 vim.o.foldlevel = 99        -- Prevent folds from being closed by default
 vim.o.foldlevelstart = 99   -- Start with all folds open
 vim.o.foldenable = true     -- Enable folding
+
+-- display vertical line at column 110
+vim.opt.colorcolumn = "110"
+vim.opt.textwidth = 110
+
+-- ripgrep
+vim.opt.grepgrp = "rg --vimgrep --no-hidden --no-ignore"
+vim.opt.grepformat = "%f:%l:%c:%m"
 

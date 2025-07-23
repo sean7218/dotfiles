@@ -2,7 +2,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     config = function()
         require'nvim-treesitter.configs'.setup {
-             ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "rust", "json", "yaml", "javascript" },
+             ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "rust", "json", "yaml", "javascript", "swift" },
              -- Install parsers synchronously (only applied to `ensure_installed`)
              sync_install = false,
 
@@ -15,7 +15,11 @@ return {
 
              highlight = {
                  enable = true,
-             }
+                 disable = function(lang, buf)
+                     -- setup if file is too large
+                     return false
+                 end,
+             },
         }
     end
 }

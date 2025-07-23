@@ -8,6 +8,7 @@ return {
                 rust = { "rustfmt" },
                 javascript = { "prettier" },
                 json = { "prettier" },
+                swift = { "swift-format" },
             },
         })
 
