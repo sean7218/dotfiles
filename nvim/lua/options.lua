@@ -1,23 +1,36 @@
---  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
--- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = false
-
+-- Use spaces instead of tabs
 vim.opt.expandtab = true
+
+-- Number of spaces a tab counts for
 vim.opt.tabstop = 4
-vim.opt.autoindent = true
+
+-- Number of spaces for each indent level (<< and >>)
 vim.opt.shiftwidth = 4
 
-vim.opt.number = true
-vim.opt.relativenumber = true
+-- Number of spaces inserted with <Tab> in insert mode
+vim.opt.softtabstop = 4
+
+-- Auto-indent new lines to match previous line
+vim.opt.smartindent = true
+
+-- Round << and >> to nearest shiftwidth
+vim.opt.shiftround = true
+
+-- Enable autoindent
+vim.opt.autoindent = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
-vim.opt.mouse = "a"
+vim.opt.mouse = 'a'
+
+-- Set to true if you have a Nerd Font installed and selected in the terminal
+vim.g.have_nerd_font = true
 
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
+
 
 -- Enable break indent
 vim.opt.breakindent = true
@@ -30,13 +43,12 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- Keep signcolumn on by default
-vim.opt.signcolumn = "yes"
+vim.opt.signcolumn = 'yes'
 
 -- Decrease update time
 vim.opt.updatetime = 250
 
 -- Decrease mapped sequence wait time
--- Displays which-key popup sooner
 vim.opt.timeoutlen = 300
 
 -- Configure how new splits should be opened
@@ -47,25 +59,28 @@ vim.opt.splitbelow = true
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 vim.opt.list = true
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- Preview substitutions live, as you type!
-vim.opt.inccommand = "split"
+vim.opt.inccommand = 'split'
 
--- Show which line your cursor is on
-vim.opt.cursorline = true
+-- lines and numbers
+vim.opt.cursorline = true        -- Show which line your cursor is on
+vim.opt.number = true             -- Enable absolute line numbers
+vim.opt.relativenumber = true    -- Enable relative line numbers
+vim.opt.cursorline = true        -- Highlight the current line
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
--- Set highlight on search, but clear on pressing <Esc> in normal mode
-vim.opt.hlsearch = true
+-- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
+-- instead raise a dialog asking if you wish to save the current file(s)
+vim.opt.confirm = true
 
--- https://www.jackfranklin.co.uk/blog/code-folding-in-vim-neovim/
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-vim.opt.foldcolumn = "0"
-vim.opt.foldtext = ""
-vim.opt.foldlevel = 99
-vim.opt.foldlevelstart = 10
-vim.opt.foldnestmax = 8
+
+vim.o.foldmethod = 'expr'
+vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.o.foldlevel = 99        -- Prevent folds from being closed by default
+vim.o.foldlevelstart = 99   -- Start with all folds open
+vim.o.foldenable = true     -- Enable folding
+
