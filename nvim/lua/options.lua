@@ -95,6 +95,6 @@ vim.opt.colorcolumn = "110"
 vim.opt.textwidth = 110
 
 -- ripgrep
-vim.opt.grepgrp = "rg --vimgrep --no-hidden --no-ignore"
+vim.opt.grepprg = "rg --vimgrep --no-hidden --no-ignore"
 vim.opt.grepformat = "%f:%l:%c:%m"
 
