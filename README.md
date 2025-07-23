@@ -12,10 +12,24 @@ $ brew install stow
 
 2. symlink the appropriate folders
     - `zsh` -> `~`
+    - `kitty` -> `~/.config/kitty`
     - `tmux` -> `~/.config/tmux`
     - `nvim` -> `~/.config/nvim`
-    - `aerospace` -> `~`
+    - `aerospace` -> `~/.config/aerospace`
     - `starship` -> `~`
+
+Here are some example usages of stow:
+
+```bash
+# create the nvim folder first
+mkdir -p ~/.config/nvim
+
+# symlink ~/dotfiles/nvim folder and target ~/.config/nvim folder
+stow -t ~/.config/nvim nvim
+
+# deleting symlink
+stow -D nvim
+```
 
 ## tmux
 
