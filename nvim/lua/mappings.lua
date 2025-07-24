@@ -34,7 +34,7 @@ vim.keymap.set('n', '<C-n>', "<cmd>Oil<cr>", { desc = 'Open [E]plore - netrw' })
 vim.keymap.set('n', '<leader>ee','<cmd>lua Snacks.explorer.open()<cr>', { desc = "Snacks [E]xplore" })
 
 -- move lines
-vim.keymap.set('v', '<A-K>', ":m <-2<cr>gv=gv", { desc = "move lines up" })
+vim.keymap.set('v', '<A-K>', ":m '<-2<cr>gv=gv", { desc = "move lines up" })
 vim.keymap.set('v', '<A-J>', ":m '>+1<cr>gv=gv", { desc = "move lines down" })
 
 -- format
